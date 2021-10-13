@@ -1,12 +1,15 @@
 import NativeList from "../string";
-import Type, {Interface} from "./type";
+import Type from "../type";
+import TypeCallback from "./type";
 import StringType from "../validatable/string/type";
+import Validator from "@dikac/t-validator/simple";
+import TypeofValidatable from "../validatable/type";
 
 export default function TypeStandard<
-    TypeT extends NativeList = NativeList
+    TypeT extends NativeList = NativeList,
 >(
     type : TypeT
-) : Interface<TypeT, string> {
+) : Validator<unknown, Type<TypeT>, TypeofValidatable<unknown, TypeT, string>> {
 
-    return <Interface<TypeT, string>> new Type(type, StringType)
+    return TypeCallback(type, StringType)
 }

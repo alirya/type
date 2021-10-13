@@ -7,19 +7,19 @@ describe(`compiler compatible`,function() {
 
     describe('explicit', ()=>{
 
-        let validator = new Typeof<"string">( 'string', TypeofString);
-        let validatable = validator.validate(1);
+        let validator = Typeof<"string">( 'string', TypeofString);
+        let validatable = validator(1);
 
         if(validatable.valid) {
 
-            let type : "string" = validator.type;
+            // let type : "string" = validator.type;
             let string : string = validatable.value;
 
         } else {
 
             // @ts-expect-error
             let string : string = validatable.value;
-            let type : "string" = validator.type;
+            // let type : "string" = validator.type;
         }
 
 
@@ -27,19 +27,19 @@ describe(`compiler compatible`,function() {
 
     describe('implicit', ()=>{
 
-        let validator = new Typeof( 'string', TypeofString);
-        let validatable = validator.validate(1);
+        let validator = Typeof( 'string', TypeofString);
+        let validatable = validator(1);
 
         if(validatable.valid) {
 
-            let type : "string" = validator.type;
+            // let type : "string" = validator.type;
             let string : string = validatable.value;
 
         } else {
 
             // @ts-expect-error
             let string : string = validatable.value;
-            let type : "string" = validator.type;
+            // let type : "string" = validator.type;
         }
 
 
@@ -50,13 +50,13 @@ describe(`validate`,function() {
 
     describe('string', ()=>{
 
-        let validator = new Typeof<"string">( 'string', TypeofString);
+        let validator = Typeof<"string">( 'string', TypeofString);
 
         it('valid', ()=>{
 
-            let validatable = validator.validate('ab');
+            let validatable = validator('ab');
 
-            expect(validator.type).toBe('string');
+            // expect(validator.type).toBe('string');
             expect(validatable.valid).toBe(true);
             expect(validatable.type).toBe('string');
             expect(validatable.value).toBe('ab');
@@ -64,9 +64,9 @@ describe(`validate`,function() {
 
         it('valid', ()=>{
 
-            let validatable = validator.validate(2);
+            let validatable = validator(2);
 
-            expect(validator.type).toBe('string');
+            // expect(validator.type).toBe('string');
             expect(validatable.valid).toBe(false);
             expect(validatable.type).toBe('string');
             expect(validatable.value).toBe(2);
@@ -75,13 +75,13 @@ describe(`validate`,function() {
 
     describe('object', ()=>{
 
-        let validator = new Typeof<"number">( 'number', TypeofString);
+        let validator = Typeof<"number">( 'number', TypeofString);
 
         it('valid', ()=>{
 
-            let validatable = validator.validate('ab');
+            let validatable = validator('ab');
 
-            expect(validator.type).toBe('number');
+            // expect(validator.type).toBe('number');
             expect(validatable.valid).toBe(false);
             expect(validatable.type).toBe('number');
             expect(validatable.value).toBe('ab');
@@ -89,9 +89,9 @@ describe(`validate`,function() {
 
         it('valid', ()=>{
 
-            let validatable = validator.validate(1);
+            let validatable = validator(1);
 
-            expect(validator.type).toBe('number');
+            // expect(validator.type).toBe('number');
             expect(validatable.valid).toBe(true);
             expect(validatable.type).toBe('number');
             expect(validatable.value).toBe(1);

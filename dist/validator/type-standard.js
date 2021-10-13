@@ -1,6 +1,6 @@
-import Type from "./type";
+import TypeCallback from "./type";
 import StringType from "../validatable/string/type";
 export default function TypeStandard(type) {
-    return new Type(type, StringType);
+    return TypeCallback(type, StringType);
 }
 //# sourceMappingURL=type-standard.js.map

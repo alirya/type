@@ -1,6 +1,6 @@
 {
   "name": "@dikac/t-type",
-  "version": "0.4.4",
+  "version": "0.5.0-beta.1",
   "description": "Typescript type",
   "dependencies": {
     "@dikac/t-function": "^0.14.2",
@@ -8,7 +8,7 @@
     "@dikac/t-object": "^0.36.11",
     "@dikac/t-string": "^0.15.4",
     "@dikac/t-validatable": "^0.19.6",
-    "@dikac/t-validator": "^0.17.5",
+    "@dikac/t-validator": "^0.18.0-beta.2",
     "@dikac/t-value": "^0.14.6",
     "ts-toolbelt": "^9.6.0"
   },
