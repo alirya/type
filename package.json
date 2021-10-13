@@ -7,23 +7,23 @@
     "@dikac/t-message": "^0.11.3",
     "@dikac/t-object": "^0.36.11",
     "@dikac/t-string": "^0.15.4",
-    "@dikac/t-validatable": "^0.19.3",
+    "@dikac/t-validatable": "^0.19.6",
     "@dikac/t-validator": "^0.17.5",
     "@dikac/t-value": "^0.14.6",
     "ts-toolbelt": "^9.6.0"
   },
   "devDependencies": {
-    "@types/jasmine": "^3.6.9",
+    "@types/jasmine": "^3.9.1",
     "cpy-cli": "^3.1.1",
     "esm": "^3.2.25",
-    "jasmine": "^3.7.0",
+    "jasmine": "^3.9.0",
     "jasmine-ts-console-reporter": "^3.1.1",
     "json-properties-remover": "^0.1.2",
     "mkdirp": "^1.0.4",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "ts-cleaner": "^1.0.5",
-    "typescript": "^4.2.4"
+    "typescript": "^4.4.4"
   },
   "scripts": {
     "spec-run-js": "node -r esm node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
