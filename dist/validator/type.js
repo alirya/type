@@ -1,5 +1,6 @@
 import TypeofValidatable from "../validatable/type";
-export default function Type(type, message) {
+import StringType from "../validatable/string/type";
+export default function Type(type, message = StringType) {
     return function (value) {
         return new TypeofValidatable(value, type, message);
     };
