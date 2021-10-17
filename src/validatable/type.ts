@@ -2,7 +2,7 @@ import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import MergeWrapper from "@dikac/t-validator/validatable/readonly-merge";
-import MessageCallback from "@dikac/t-validator/validatable/callback-function";
+import MessageCallback from "@dikac/t-validator/validatable/callback";
 import TypeBoolean from "../value/boolean/type";
 import TypeInterface from "../type/type";
 import String from "../string";

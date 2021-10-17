@@ -8,15 +8,15 @@
     "@dikac/t-object": "^0.36.11",
     "@dikac/t-string": "^0.15.4",
     "@dikac/t-validatable": "^0.19.6",
-    "@dikac/t-validator": "^0.18.0-beta.2",
+    "@dikac/t-validator": "^0.18.0",
     "@dikac/t-value": "^0.14.6",
     "ts-toolbelt": "^9.6.0"
   },
   "devDependencies": {
-    "@types/jasmine": "^3.9.1",
+    "@types/jasmine": "^3.10.0",
     "cpy-cli": "^3.1.1",
     "esm": "^3.2.25",
-    "jasmine": "^3.9.0",
+    "jasmine": "^3.10.0",
     "jasmine-ts-console-reporter": "^3.1.1",
     "json-properties-remover": "^0.1.2",
     "mkdirp": "^1.0.4",

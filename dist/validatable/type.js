@@ -1,5 +1,5 @@
 import MergeWrapper from "@dikac/t-validator/validatable/readonly-merge";
-import MessageCallback from "@dikac/t-validator/validatable/callback-function";
+import MessageCallback from "@dikac/t-validator/validatable/callback";
 import TypeBoolean from "../value/boolean/type";
 export default class Type extends MergeWrapper {
     constructor(value, type, message) {
