@@ -9,5 +9,5 @@ export default function Type<TypeName extends TypeString = TypeString>(
     error : (value:unknown, type:TypeName)=>Error = TypeError
 ) : asserts value is TypeName {
 
-    Callback<[unknown, TypeName]>([value, type], Guard, error);
+    Callback.Parameter<[unknown, TypeName]>([value, type], Guard, error);
 }
