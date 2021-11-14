@@ -1,35 +1,22 @@
-import Validator from "@dikac/t-validator/simple";
-import TypeofValidatable from "../validatable/type";
+import TypeParameters, {TypeType} from "./type-parameters";
+import TypeParameter, {TypeArgument} from "./type-parameter";
+import String from "../string";
 import StringNative from "../string";
-import TypeType from "../type";
-import Return from "@dikac/t-validator/validatable/simple";
-import StringType from "../validatable/string/type";
 
-export default function Type<
-    TypeName extends StringNative,
-    MessageType = unknown
->(
-    type : TypeName,
-    message : (result:Omit<Return<any, any, TypeType<TypeName>>, 'message'>)=>MessageType,
-) : Validator<unknown, TypeType<TypeName>, TypeofValidatable<unknown, TypeName, MessageType>>;
+namespace Type {
 
-export default function Type<
-    TypeName extends StringNative
->(
-    type : TypeName,
-) : Validator<unknown, TypeType<TypeName>, TypeofValidatable<unknown, TypeName, string>>;
-export default function Type<
-    TypeName extends StringNative,
-    MessageType = unknown
->(
-    type : TypeName,
-    message : (result:Omit<Return<any, any, TypeType<TypeName>>, 'message'>)=>MessageType|string = StringType,
-) : Validator<unknown, TypeType<TypeName>, TypeofValidatable<unknown, TypeName, MessageType>> {
+    export const Parameters = TypeParameters;
+    export const Parameter = TypeParameter;
+    export type Type<
+        TypeName extends StringNative,
+        MessageType = unknown
+        > = TypeType<TypeName, MessageType>;
 
-    return function<Argument extends any, ArgumentType extends TypeType<TypeName>> (value : Argument|ArgumentType) {
+    export type Argument<
+        TypeName extends StringNative,
+        MessageType = unknown
+        > = TypeArgument<TypeName, MessageType>;
 
-        return <Return<any, Argument, TypeType<TypeName>, TypeofValidatable< Argument, TypeName, MessageType>>>
-            new TypeofValidatable(value, type, message);
-
-    } as Validator<unknown, TypeType<TypeName>, TypeofValidatable<unknown, TypeName, MessageType>>
 }
+
+export default Type;

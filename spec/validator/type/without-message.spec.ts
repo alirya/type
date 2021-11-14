@@ -1,11 +1,10 @@
 import Typeof from "../../../dist/validator/type";
-import TypeofString from "../../../dist/validatable/string/type";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 
 describe('string', ()=>{
 
-    let validator = Typeof<"string">( 'string');
+    let validator = Typeof.Parameters<"string">( 'string');
 
     it('valid', ()=>{
 
@@ -30,7 +29,7 @@ describe('string', ()=>{
 
 describe('object', ()=>{
 
-    let validator = Typeof<"number">( 'number');
+    let validator = Typeof.Parameters<"number">( 'number');
 
     it('valid', ()=>{
 

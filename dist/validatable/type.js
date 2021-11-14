@@ -1,15 +1,9 @@
-import MergeWrapper from "@dikac/t-validator/validatable/readonly-wrapper";
-import MessageCallback from "@dikac/t-validator/validatable/callback";
-import TypeBoolean from "../value/boolean/type";
-export default class Type extends MergeWrapper.Parameter {
-    constructor(value, type, message) {
-        let container = {
-            type: type,
-            value: value,
-        };
-        let msg = MessageCallback.Function.Parameter(container, TypeBoolean, () => message(this));
-        super(container, msg, msg);
-        this.type = type;
-    }
-}
+import TypeParameters from "./type-parameters";
+import TypeParameter from "./type-parameter";
+var Type;
+(function (Type) {
+    Type.Parameters = TypeParameters;
+    Type.Parameter = TypeParameter;
+})(Type || (Type = {}));
+export default Type;
 //# sourceMappingURL=type.js.map

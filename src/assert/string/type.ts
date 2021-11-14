@@ -1,23 +1,12 @@
-import String from "../../string";
-import SentencesMust from "@dikac/t-string/message/sentences-must";
+import TypeParameters from "./type-parameters";
+import TypeParameter, {TypeArgument} from "./type-parameter";
 
+namespace Type {
 
-export default function Type(
-    valid : boolean,
-    value : unknown,
-    type : String,
-    subject : string = '',
-    conversion : (value:unknown)=>string = value=>typeof value
-) : string {
+    export const Parameters = TypeParameters;
+    export const Parameter = TypeParameter;
+    export type Argument = TypeArgument;
 
-    const sentence =  SentencesMust(valid,[subject]);
-    sentence.expect =  ['type of', type];
-    sentence.comma =  ['expect'];
-
-    if(!valid && conversion) {
-
-        sentence.actual.push('actual', conversion(value))
-    }
-
-    return sentence.message;
 }
+
+export default Type;

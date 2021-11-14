@@ -1,10 +1,9 @@
-import Value from "@dikac/t-value/value";
-import Validatable from "@dikac/t-validatable/validatable";
-import Message from "@dikac/t-message/message";
-import MergeWrapper from "@dikac/t-validator/validatable/readonly-wrapper";
-import TypeInterface from "../type/type";
+import TypeParameters, { TypeType } from "./type-parameters";
+import TypeParameter from "./type-parameter";
 import String from "../string";
-export default class Type<ValueT = unknown, TypeT extends String = String, MessageT = unknown> extends MergeWrapper.Parameter<Value<ValueT>, Message<MessageT>, Validatable> {
-    readonly type: TypeT;
-    constructor(value: ValueT, type: TypeT, message: (result: Readonly<Value<ValueT> & TypeInterface<TypeT> & Validatable>) => MessageT);
+declare namespace Type {
+    const Parameters: typeof TypeParameters;
+    const Parameter: typeof TypeParameter;
+    type Type<ValueT = unknown, TypeT extends String = String, MessageT = unknown> = TypeType<ValueT, TypeT, MessageT>;
 }
+export default Type;

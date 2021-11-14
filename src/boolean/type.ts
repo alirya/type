@@ -1,7 +1,11 @@
-import Type from "../type";
-import TypeString from "../string";
+import TypeParameters from "./type-parameters";
+import TypeParameter from "./type-parameter";
 
-export default function Type<TypeName extends TypeString>(value : unknown, type : TypeName) : value is Type<TypeName> {
+namespace Type {
 
-    return typeof value === type;
+    export const Parameters = TypeParameters;
+    export const Parameter = TypeParameter;
+
 }
+
+export default Type;

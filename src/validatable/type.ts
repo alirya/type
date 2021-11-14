@@ -1,33 +1,17 @@
-import Value from "@dikac/t-value/value";
-import Validatable from "@dikac/t-validatable/validatable";
-import Message from "@dikac/t-message/message";
-import MergeWrapper from "@dikac/t-validator/validatable/readonly-wrapper";
-import MessageCallback from "@dikac/t-validator/validatable/callback";
-import TypeBoolean from "../value/boolean/type";
-import TypeInterface from "../type/type";
+import TypeParameters, {TypeType} from "./type-parameters";
+import TypeParameter from "./type-parameter";
 import String from "../string";
 
+namespace Type {
 
-export default class Type<ValueT = unknown, TypeT extends String = String, MessageT = unknown>
-    extends MergeWrapper.Parameter<Value<ValueT>, Message<MessageT>, Validatable>
-{
-    readonly type : TypeT;
+    export const Parameters = TypeParameters;
+    export const Parameter = TypeParameter;
+    export type Type<
+        ValueT = unknown,
+        TypeT extends String = String,
+        MessageT = unknown
+    > = TypeType<ValueT, TypeT, MessageT>;
 
-    constructor(
-        value : ValueT,
-        type : TypeT,
-        message : (result:Readonly<Value<ValueT> & TypeInterface<TypeT> & Validatable>)=>MessageT,
-    ) {
-
-        let container : Value<ValueT> & TypeInterface<TypeT> = {
-            type : type,
-            value : value,
-        };
-
-        let msg = MessageCallback.Function.Parameter(container, TypeBoolean, ()=>message(this));
-
-        super(container, msg, msg);
-
-        this.type = type;
-    }
 }
+
+export default Type;

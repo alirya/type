@@ -1,7 +1,10 @@
-import Validator from "@dikac/t-validator/simple";
-import TypeofValidatable from "../validatable/type";
+import TypeParameters, { TypeType } from "./type-parameters";
+import TypeParameter, { TypeArgument } from "./type-parameter";
 import StringNative from "../string";
-import TypeType from "../type";
-import Return from "@dikac/t-validator/validatable/simple";
-export default function Type<TypeName extends StringNative, MessageType = unknown>(type: TypeName, message: (result: Omit<Return<any, any, TypeType<TypeName>>, 'message'>) => MessageType): Validator<unknown, TypeType<TypeName>, TypeofValidatable<unknown, TypeName, MessageType>>;
-export default function Type<TypeName extends StringNative>(type: TypeName): Validator<unknown, TypeType<TypeName>, TypeofValidatable<unknown, TypeName, string>>;
+declare namespace Type {
+    const Parameters: typeof TypeParameters;
+    const Parameter: typeof TypeParameter;
+    type Type<TypeName extends StringNative, MessageType = unknown> = TypeType<TypeName, MessageType>;
+    type Argument<TypeName extends StringNative, MessageType = unknown> = TypeArgument<TypeName, MessageType>;
+}
+export default Type;

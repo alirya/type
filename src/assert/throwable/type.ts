@@ -1,12 +1,12 @@
-import String from "../../string";
-import TypeString from "../string/type";
+import TypeParameters from "./type-parameters";
+import TypeParameter, {TypeArgument} from "./type-parameter";
 
-export default function Type(
-    value : unknown,
-    type : String,
-    message : (valid:boolean, value:unknown, type:String)=>string = TypeString,
-    error : (message:string)=>Error = (v)=>new Error(v),
-) : Error {
+namespace Type {
 
-    return error(message(false, value, type));
+    export const Parameters = TypeParameters;
+    export const Parameter = TypeParameter;
+    export type Argument = TypeArgument;
+
 }
+
+export default Type;

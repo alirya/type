@@ -1,11 +1,9 @@
-import SentencesMust from "@dikac/t-string/message/sentences-must";
-export default function Type(valid, value, type, subject = '', conversion = value => typeof value) {
-    const sentence = SentencesMust(valid, [subject]);
-    sentence.expect = ['type of', type];
-    sentence.comma = ['expect'];
-    if (!valid && conversion) {
-        sentence.actual.push('actual', conversion(value));
-    }
-    return sentence.message;
-}
+import TypeParameters from "./type-parameters";
+import TypeParameter from "./type-parameter";
+var Type;
+(function (Type) {
+    Type.Parameters = TypeParameters;
+    Type.Parameter = TypeParameter;
+})(Type || (Type = {}));
+export default Type;
 //# sourceMappingURL=type.js.map
