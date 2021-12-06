@@ -1,13 +1,13 @@
-import Guard from "../boolean/type";
-import Callback from "@dikac/t-function/assert/callback";
-import TypeError from "./throwable/type";
+import Guard from "../boolean/type-parameters";
+import Callback from "@dikac/t-function/assert/callback-parameters";
+import TypeError from "./throwable/type-parameters";
 import TypeString from "../string";
 
 export default function TypeParameters<TypeName extends TypeString = TypeString>(
     value : unknown,
     type : TypeName,
-    error : (value:unknown, type:TypeName)=>Error = TypeError.Parameters
+    error : (value:unknown, type:TypeName)=>Error = TypeError
 ) : asserts value is TypeName {
 
-    Callback.Parameter<[unknown, TypeName]>([value, type], Guard.Parameters, error);
+    Callback<[unknown, TypeName]>([value, type], Guard, error);
 }

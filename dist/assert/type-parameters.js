@@ -1,7 +1,7 @@
-import Guard from "../boolean/type";
-import Callback from "@dikac/t-function/assert/callback";
-import TypeError from "./throwable/type";
-export default function TypeParameters(value, type, error = TypeError.Parameters) {
-    Callback.Parameter([value, type], Guard.Parameters, error);
+import Guard from "../boolean/type-parameters";
+import Callback from "@dikac/t-function/assert/callback-parameters";
+import TypeError from "./throwable/type-parameters";
+export default function TypeParameters(value, type, error = TypeError) {
+    Callback([value, type], Guard, error);
 }
 //# sourceMappingURL=type-parameters.js.map

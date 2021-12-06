@@ -1,5 +1,4 @@
 import String from "../../string";
-import SentencesMust from "@dikac/t-string/message/sentences-must";
 
 
 export default function TypeParameters<T extends String>(
@@ -10,14 +9,24 @@ export default function TypeParameters<T extends String>(
     conversion : (value:unknown)=>string = value=>typeof value
 ) : string {
 
-    const sentence =  SentencesMust(valid,[subject]);
-    sentence.expect =  ['type of', type];
-    sentence.comma =  ['expect'];
+    const strings : string[] = [];
+    strings.push(subject);
+
+    if(valid) {
+
+        strings.push('is')
+
+    } else {
+
+        strings.push('must')
+    }
+
 
     if(!valid && conversion) {
 
-        sentence.actual.push('actual', conversion(value))
+        strings[2] = strings[2] + ',';
+        strings.push('actual', conversion(value))
     }
 
-    return sentence.message;
+    return strings.join(' ') + '.';
 }

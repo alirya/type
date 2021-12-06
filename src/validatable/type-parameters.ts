@@ -4,7 +4,7 @@ import BooleanTypeParameters from "../boolean/type-parameters";
 import MessageStatic from "@dikac/t-validator/message/function/static";
 import Simple from "@dikac/t-validator/validatable/simple";
 import Type from "../type";
-import ValidatableType from "@dikac/t-validator/validatable/dynamic";
+import ValidatableType from "@dikac/t-validator/validatable/validatable";
 import TypeofString from "../assert/string/type";
 import StringNative from "../string";
 
@@ -12,12 +12,12 @@ export type TypeType<
     ValueT = unknown,
     TypeT extends String = String,
     MessageT = unknown
-> = Simple<unknown, ValueT, Type<TypeT>, ValidatableType<unknown, MessageT>> & {type : TypeT};
+> = Simple<ValueT, Type<TypeT>, ValidatableType<unknown, MessageT>> & {type : TypeT};
 
 export default function TypeParameters<ValueT = unknown, TypeT extends String = String, MessageT = unknown>(
     value : ValueT,
     type : TypeT,
-    message : MessageStatic.Parameters<unknown, ValueT, Type<TypeT>, false, true, MessageT, [StringNative]>
+    message : MessageStatic.Parameters<ValueT, Type<TypeT>, false, true, MessageT, [StringNative]>
 ) : TypeType<ValueT, TypeT, MessageT>;
 
 export default function TypeParameters<ValueT = unknown, TypeT extends String = String>(
@@ -28,7 +28,7 @@ export default function TypeParameters<ValueT = unknown, TypeT extends String = 
 export default function TypeParameters<ValueT = unknown, TypeT extends String = String, MessageT = unknown>(
     value : ValueT,
     type : TypeT,
-    message : MessageStatic.Parameters<unknown, ValueT, Type<TypeT>, false, true, MessageT|string, [StringNative]> = TypeofString.Parameters
+    message : MessageStatic.Parameters<ValueT, Type<TypeT>, false, true, MessageT|string, [StringNative]> = TypeofString.Parameters
 ) : TypeType<ValueT, TypeT, MessageT> {
 
     return Object.assign(

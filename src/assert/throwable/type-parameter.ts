@@ -1,8 +1,8 @@
 import String from "../../string";
 import Value from "@dikac/t-value/value";
 import Type from "../../type/type";
-import Dynamic from "@dikac/t-validator/message/function/dynamic";
-import DynamicValue from "@dikac/t-validator/value/dynamic";
+import Dynamic from "@dikac/t-validator/message/function/validatable";
+import DynamicValue from "@dikac/t-validator/value/validatable";
 import Message from "@dikac/t-message/message";
 import TypeParameters from "./type-parameters";
 

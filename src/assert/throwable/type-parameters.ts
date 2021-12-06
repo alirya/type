@@ -1,6 +1,6 @@
 import String from "../../string";
 import TypeString from "../string/type";
-import Dynamic from "@dikac/t-validator/message/function/dynamic";
+import Dynamic from "@dikac/t-validator/message/function/validatable";
 
 export default function TypeParameters(
     value : unknown,
