@@ -15,10 +15,6 @@ export type TypeArgument =
     }
 
 export default function TypeParameter(
-    // value : unknown,
-    // type : String,
-    // message : Dynamic.Parameter<unknown, string, DynamicValue<unknown> & Type<String>> = TypeString,
-    // error : (message:string)=>Error = (v)=>new Error(v),
     {
         value,
         type,

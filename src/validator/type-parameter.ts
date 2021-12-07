@@ -18,7 +18,7 @@ export default function TypeParameter<
     MessageType = unknown
 >(
     type : TypeName,
-    message : Simple<unknown, Type<TypeName>, MessageType, [StringNative]>// (result:Omit<Return<any, any, TypeType<TypeName>>, 'message'>)=>MessageType,
+    message : Simple<unknown, Type<TypeName>, MessageType, [StringNative]>
 ) : TypeType<TypeName, MessageType>;
 
 export default function TypeParameter<

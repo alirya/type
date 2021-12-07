@@ -16,11 +16,6 @@ export type TypeArgument =
     }
 
 export default function TypeParameter(
-    // value : unknown,
-    // valid : boolean,
-    // type : String,
-    // subject : string = '',
-    // conversion : (value:unknown)=>string = value=>typeof value,
     {
         value,
         valid,
