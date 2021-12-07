@@ -1,7 +1,7 @@
 import Value from "@dikac/t-value/value";
 import Message from "@dikac/t-message/message";
 import String from "../string";
-import MessageDynamic from "@dikac/t-validator/message/function/validatable";
+import MessageDynamic from "@dikac/t-validator/message/function/validatable-parameter";
 import Simple from "@dikac/t-validator/validatable/simple";
 import Type from "../type";
 import TypeContainer from "../type/type";
@@ -21,7 +21,7 @@ export type TypeArgument<
     MessageT = unknown
 > =
     Value<ValueT> & TypeContainer<TypeT> &
-    Partial<Message<MessageDynamic.Parameter<ValueT, MessageT>>>
+    Partial<Message<MessageDynamic<ValueT, MessageT>>>
 
 export default function TypeParameter<ValueT = unknown, TypeT extends String = String, MessageT = unknown>(
     //value : ValueT,

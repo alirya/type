@@ -1,11 +1,11 @@
-import Callback from "@dikac/t-validator/validatable/callback";
+import Callback from "@dikac/t-validator/validatable/callback-class-parameters";
 import String from "../string";
 import BooleanTypeParameters from "../boolean/type-parameters";
-import MessageStatic from "@dikac/t-validator/message/function/static";
+import MessageStatic from "@dikac/t-validator/message/function/static-parameters";
 import Simple from "@dikac/t-validator/validatable/simple";
 import Type from "../type";
 import ValidatableType from "@dikac/t-validator/validatable/validatable";
-import TypeofString from "../assert/string/type";
+import TypeofString from "../assert/string/type-parameters";
 import StringNative from "../string";
 
 export type TypeType<
@@ -17,7 +17,7 @@ export type TypeType<
 export default function TypeParameters<ValueT = unknown, TypeT extends String = String, MessageT = unknown>(
     value : ValueT,
     type : TypeT,
-    message : MessageStatic.Parameters<ValueT, Type<TypeT>, false, true, MessageT, [StringNative]>
+    message : MessageStatic<ValueT, Type<TypeT>, false, true, MessageT, [StringNative]>
 ) : TypeType<ValueT, TypeT, MessageT>;
 
 export default function TypeParameters<ValueT = unknown, TypeT extends String = String>(
@@ -28,11 +28,11 @@ export default function TypeParameters<ValueT = unknown, TypeT extends String = 
 export default function TypeParameters<ValueT = unknown, TypeT extends String = String, MessageT = unknown>(
     value : ValueT,
     type : TypeT,
-    message : MessageStatic.Parameters<ValueT, Type<TypeT>, false, true, MessageT|string, [StringNative]> = TypeofString.Parameters
+    message : MessageStatic<ValueT, Type<TypeT>, false, true, MessageT|string, [StringNative]> = TypeofString
 ) : TypeType<ValueT, TypeT, MessageT> {
 
     return Object.assign(
-        new Callback.Class.Parameters<unknown>(value, BooleanTypeParameters, message, [type]),
+        new Callback<unknown>(value, BooleanTypeParameters, message, [type]),
         {type}
     ) as TypeType<ValueT, TypeT, MessageT>
 
