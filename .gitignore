@@ -1,4 +1,5 @@
 .idea/
+dist/
 dist-spec/
 dist/compiler-cache
 

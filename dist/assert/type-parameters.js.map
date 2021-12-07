@@ -1,1 +1,0 @@
-{"version":3,"file":"type-parameters.js","sourceRoot":"","sources":["../../src/assert/type-parameters.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,4BAA4B,CAAC;AAC/C,OAAO,QAAQ,MAAM,8CAA8C,CAAC;AACpE,OAAO,SAAS,MAAM,6BAA6B,CAAC;AAGpD,MAAM,CAAC,OAAO,UAAU,cAAc,CAClC,KAAe,EACf,IAAe,EACf,QAAgD,SAAS;IAGzD,QAAQ,CAAsB,CAAC,KAAK,EAAE,IAAI,CAAC,EAAE,KAAK,EAAE,KAAK,CAAC,CAAC;AAC/D,CAAC"}
