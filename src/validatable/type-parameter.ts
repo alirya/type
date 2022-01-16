@@ -1,13 +1,13 @@
-import Value from "@alirya/value/value";
-import Message from "@alirya/message/message";
-import String from "../string";
-import MessageDynamic from "@alirya/validator/message/function/validatable-parameter";
-import Simple from "@alirya/validator/validatable/simple";
-import Type from "../type";
-import TypeContainer from "../type/type";
-import ValidatableType from "@alirya/validator/validatable/validatable";
-import StrictOmit from "@alirya/object/strict-omit";
-import TypeParameters from "./type-parameters";
+import Value from '@alirya/value/value';
+import Message from '@alirya/message/message';
+import String from '../string';
+import MessageDynamic from '@alirya/validator/message/function/validatable-parameter';
+import Simple from '@alirya/validator/validatable/simple';
+import Type from '../type';
+import TypeContainer from '../type/type';
+import ValidatableType from '@alirya/validator/validatable/validatable';
+import StrictOmit from '@alirya/object/strict-omit';
+import TypeParameters from './type-parameters';
 
 export type TypeType<
     ValueT = unknown,
@@ -21,7 +21,7 @@ export type TypeArgument<
     MessageT = unknown
 > =
     Value<ValueT> & TypeContainer<TypeT> &
-    Partial<Message<MessageDynamic<ValueT, MessageT>>>
+    Partial<Message<MessageDynamic<ValueT, MessageT>>>;
 
 export default function TypeParameter<ValueT = unknown, TypeT extends String = String, MessageT = unknown>(
     {

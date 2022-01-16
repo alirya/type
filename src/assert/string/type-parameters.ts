@@ -1,4 +1,4 @@
-import String from "../../string";
+import String from '../../string';
 
 
 export default function TypeParameters<T extends String>(
@@ -14,18 +14,18 @@ export default function TypeParameters<T extends String>(
 
     if(valid) {
 
-        strings.push('is')
+        strings.push('is');
 
     } else {
 
-        strings.push('must')
+        strings.push('must');
     }
 
 
     if(!valid && conversion) {
 
         strings[2] = strings[2] + ',';
-        strings.push('actual', conversion(value))
+        strings.push('actual', conversion(value));
     }
 
     return strings.join(' ') + '.';

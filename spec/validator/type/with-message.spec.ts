@@ -1,11 +1,11 @@
-import Typeof from "../../../dist/validator/type-parameters";
-import TypeofString from "../../../dist/assert/string/type-parameters";
+import Typeof from '../../../dist/validator/type-parameters';
+import TypeofString from '../../../dist/assert/string/type-parameters';
 
-it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
+it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('string', ()=>{
 
-    let validator = Typeof<"string">( 'string', TypeofString);
+    let validator = Typeof<'string'>( 'string', TypeofString);
 
     it('valid', ()=>{
 
@@ -30,7 +30,7 @@ describe('string', ()=>{
 
 describe('object', ()=>{
 
-    let validator = Typeof<"number">( 'number', TypeofString);
+    let validator = Typeof<'number'>( 'number', TypeofString);
 
     it('valid', ()=>{
 

@@ -1,14 +1,14 @@
-import Validator from "@alirya/validator/simple";
-import TypeofValidatable, {TypeType as TypeofValidatableType} from "../validatable/type-parameters";
-import StringNative from "../string";
-import Type from "../type";
-import Simple from "@alirya/validator/message/function/simple-parameters";
-import TypeofString from "../assert/string/type-parameters";
+import Validator from '@alirya/validator/simple';
+import TypeofValidatable, {TypeType as TypeofValidatableType} from '../validatable/type-parameters';
+import StringNative from '../string';
+import Type from '../type';
+import Simple from '@alirya/validator/message/function/simple-parameters';
+import TypeofString from '../assert/string/type-parameters';
 
 export type TypeType<
     TypeName extends StringNative,
     MessageType = unknown
-    > = Validator<unknown, Type<TypeName>, TypeofValidatableType<unknown, TypeName, MessageType>>
+    > = Validator<unknown, Type<TypeName>, TypeofValidatableType<unknown, TypeName, MessageType>>;
 
 export default function TypeParameters<
     TypeName extends StringNative,
@@ -35,5 +35,5 @@ export default function TypeParameters<
 
         return  TypeofValidatable(value, type, message);
 
-    } as Validator<unknown, Type<TypeName>, TypeofValidatableType<unknown, TypeName, MessageType>>
+    } as Validator<unknown, Type<TypeName>, TypeofValidatableType<unknown, TypeName, MessageType>>;
 }

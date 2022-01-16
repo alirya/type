@@ -1,13 +1,13 @@
-import Typeof from "../../../dist/validator/type-parameters";
-import TypeofString from "../../../dist/assert/string/type-parameters";
+import Typeof from '../../../dist/validator/type-parameters';
+import TypeofString from '../../../dist/assert/string/type-parameters';
 
-it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
+it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe(`with message`,function() {
 
     describe('explicit', ()=>{
 
-        let validator = Typeof<"string">( 'string', TypeofString);
+        let validator = Typeof<'string'>( 'string', TypeofString);
         let validatable = validator(1);
 
         if(validatable.valid) {
@@ -51,7 +51,7 @@ describe(`without message`,function() {
 
     describe('explicit', ()=>{
 
-        let validator = Typeof<"string">( 'string');
+        let validator = Typeof<'string'>( 'string');
         let validatable = validator(1);
 
         if(validatable.valid) {

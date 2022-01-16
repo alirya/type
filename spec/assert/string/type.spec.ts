@@ -1,6 +1,6 @@
-import Type from "../../../dist/assert/string/type-parameters";
+import Type from '../../../dist/assert/string/type-parameters';
 
-it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
+it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 it('true', ()=>{
 

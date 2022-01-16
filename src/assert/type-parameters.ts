@@ -1,7 +1,7 @@
-import Guard from "../boolean/type-parameters";
-import Callback from "@alirya/function/assert/callback-parameters";
-import TypeError from "./throwable/type-parameters";
-import TypeString from "../string";
+import Guard from '../boolean/type-parameters';
+import Callback from '@alirya/function/assert/callback-parameters';
+import TypeError from './throwable/type-parameters';
+import TypeString from '../string';
 
 export default function TypeParameters<TypeName extends TypeString = TypeString>(
     value : unknown,

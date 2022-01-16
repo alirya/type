@@ -1,6 +1,6 @@
-import String from "../../string";
-import TypeString from "../string/type-parameters";
-import Dynamic from "@alirya/validator/message/function/validatable-parameters";
+import String from '../../string';
+import TypeString from '../string/type-parameters';
+import Dynamic from '@alirya/validator/message/function/validatable-parameters';
 
 export default function TypeParameters(
     value : unknown,

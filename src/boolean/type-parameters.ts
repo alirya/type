@@ -1,5 +1,5 @@
-import Type from "../type";
-import TypeString from "../string";
+import Type from '../type';
+import TypeString from '../string';
 
 export default function TypeParameters<TypeName extends TypeString>(
     value : unknown,

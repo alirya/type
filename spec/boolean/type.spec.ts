@@ -1,14 +1,14 @@
-import Type from "../../dist/boolean/type-parameters";
+import Type from '../../dist/boolean/type-parameters';
 
-it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
+it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("compiler compatible", function() {
+describe('compiler compatible', function() {
 
-    describe("boolean", function() {
+    describe('boolean', function() {
 
         let value : unknown = true;
 
-        if(Type(value, "boolean")) {
+        if(Type(value, 'boolean')) {
 
             let result : boolean = value;
 
@@ -19,11 +19,11 @@ describe("compiler compatible", function() {
         }
     });
 
-    describe("object", function() {
+    describe('object', function() {
 
         let value : unknown = {};
 
-        if(Type(value, "object")) {
+        if(Type(value, 'object')) {
 
             let result : object = value;
 
@@ -34,11 +34,11 @@ describe("compiler compatible", function() {
         }
     });
 
-    describe("string", function() {
+    describe('string', function() {
 
         let value : unknown = 'str';
 
-        if(Type(value, "string")) {
+        if(Type(value, 'string')) {
 
             let result : string = value;
 
@@ -50,11 +50,11 @@ describe("compiler compatible", function() {
     });
 
 
-    describe("number", function() {
+    describe('number', function() {
 
         let value : unknown = 1;
 
-        if(Type(value, "number")) {
+        if(Type(value, 'number')) {
 
             let result : number = value;
 
@@ -65,11 +65,11 @@ describe("compiler compatible", function() {
         }
     });
 
-    describe("function", function() {
+    describe('function', function() {
 
         let value : unknown = ()=>null;
 
-        if(Type(value, "function")) {
+        if(Type(value, 'function')) {
 
             let result : ()=>any = value;
 
@@ -82,79 +82,79 @@ describe("compiler compatible", function() {
 
 });
 
-describe("boolean", function() {
+describe('boolean', function() {
 
     it(`true`, () => {
-        expect(Type(true, "boolean")).toBeTrue();
+        expect(Type(true, 'boolean')).toBeTrue();
     });
 
     it(`false`, () => {
-        expect(Type(false, "boolean")).toBeTrue();
+        expect(Type(false, 'boolean')).toBeTrue();
     });
 
 });
 
-describe("string", function() {
+describe('string', function() {
 
     it(`primitive`, () => {
-        expect(Type('str', "string")).toBeTrue();
+        expect(Type('str', 'string')).toBeTrue();
     });
 
     it(`object`, () => {
-        expect(Type(new String('str'), "string")).toBeFalse();
+        expect(Type(new String('str'), 'string')).toBeFalse();
     });
 
 });
 
 
-describe("number", function() {
+describe('number', function() {
 
     it(`primitive`, () => {
-        expect(Type(1, "number")).toBeTrue();
+        expect(Type(1, 'number')).toBeTrue();
     });
 
     it(`nan`, () => {
-        expect(Type(NaN, "number")).toBeTrue();
+        expect(Type(NaN, 'number')).toBeTrue();
     });
 
 });
 
-describe("object", function() {
+describe('object', function() {
 
     it(`plain`, () => {
-        expect(Type({}, "object")).toBeTrue();
+        expect(Type({}, 'object')).toBeTrue();
     });
 
     it(`instance`, () => {
-        expect(Type(new Map(), "object")).toBeTrue();
+        expect(Type(new Map(), 'object')).toBeTrue();
     });
 
 });
 
-describe("function", function() {
+describe('function', function() {
 
     it(`anonymous `, () => {
-        expect(Type(function () {}, "function")).toBeTrue();
+        expect(Type(function () {}, 'function')).toBeTrue();
     });
 
     it(`anonymous arrow`, () => {
-        expect(Type(()=>{}, "function")).toBeTrue();
+        expect(Type(()=>{}, 'function')).toBeTrue();
     });
 
     it(`named`, () => {
-        expect(Type(isNaN, "function")).toBeTrue();
+        expect(Type(isNaN, 'function')).toBeTrue();
     });
 
 });
 
-describe("empty", function() {
+describe('empty', function() {
 
     it(`null `, () => {
-        expect(Type(null, "object")).toBeTrue();
+        expect(Type(null, 'object')).toBeTrue();
     });
 
     it(`undefined`, () => {
-        expect(Type(undefined, "undefined")).toBeTrue();
+        expect(Type(undefined, 'undefined')).toBeTrue();
     });
 
 });
