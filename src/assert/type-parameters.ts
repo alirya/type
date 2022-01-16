@@ -1,5 +1,5 @@
 import Guard from "../boolean/type-parameters";
-import Callback from "@dikac/t-function/assert/callback-parameters";
+import Callback from "@alirya/function/assert/callback-parameters";
 import TypeError from "./throwable/type-parameters";
 import TypeString from "../string";
 

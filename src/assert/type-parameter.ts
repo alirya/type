@@ -1,5 +1,5 @@
 import TypeString from "../string";
-import Value from "@dikac/t-value/value";
+import Value from "@alirya/value/value";
 import Type from "../type/type";
 import TypeParameters from "./type-parameters";
 

@@ -17,7 +17,7 @@ describe(`with message`,function() {
 
         } else {
 
-            // @ts-expect-error
+            // @ts-expecerror
             let string : string = validatable.value;
             // let type : "string" = validator.type;
         }
@@ -34,12 +34,12 @@ describe(`with message`,function() {
 
             // let type : "string" = validator.type;
             let string : string = validatable.value;
-            // @ts-expect-error
+            // @ts-expecerror
             let number : number = validatable.value;
 
         } else {
 
-            // @ts-expect-error
+            // @ts-expecerror
             let string : string = validatable.value;
             let number : number = validatable.value;
             // let type : "string" = validator.type;
@@ -61,7 +61,7 @@ describe(`without message`,function() {
 
         } else {
 
-            // @ts-expect-error
+            // @ts-expecerror
             let string : string = validatable.value;
             // let type : "string" = validator.type;
         }
@@ -81,7 +81,7 @@ describe(`without message`,function() {
 
         } else {
 
-            // @ts-expect-error
+            // @ts-expecerror
             let string : string = validatable.value;
             // let type : "string" = validator.type;
         }

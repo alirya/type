@@ -1,10 +1,10 @@
-import Callback from "@dikac/t-validator/validatable/callback-class-parameters";
+import Callback from "@alirya/validator/validatable/callback-class-parameters";
 import String from "../string";
 import BooleanTypeParameters from "../boolean/type-parameters";
-import MessageStatic from "@dikac/t-validator/message/function/static-parameters";
-import Simple from "@dikac/t-validator/validatable/simple";
+import MessageStatic from "@alirya/validator/message/function/static-parameters";
+import Simple from "@alirya/validator/validatable/simple";
 import Type from "../type";
-import ValidatableType from "@dikac/t-validator/validatable/validatable";
+import ValidatableType from "@alirya/validator/validatable/validatable";
 import TypeofString from "../assert/string/type-parameters";
 import StringNative from "../string";
 

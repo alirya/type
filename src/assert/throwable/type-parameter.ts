@@ -1,9 +1,9 @@
 import String from "../../string";
-import Value from "@dikac/t-value/value";
+import Value from "@alirya/value/value";
 import Type from "../../type/type";
-import Dynamic from "@dikac/t-validator/message/function/validatable-parameter";
-import DynamicValue from "@dikac/t-validator/value/validatable";
-import Message from "@dikac/t-message/message";
+import Dynamic from "@alirya/validator/message/function/validatable-parameter";
+import DynamicValue from "@alirya/validator/value/validatable";
+import Message from "@alirya/message/message";
 import TypeParameters from "./type-parameters";
 
 export type TypeArgument =

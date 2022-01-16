@@ -1,2 +1,2 @@
-# t-type
+# type
 typescript type

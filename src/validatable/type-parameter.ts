@@ -1,12 +1,12 @@
-import Value from "@dikac/t-value/value";
-import Message from "@dikac/t-message/message";
+import Value from "@alirya/value/value";
+import Message from "@alirya/message/message";
 import String from "../string";
-import MessageDynamic from "@dikac/t-validator/message/function/validatable-parameter";
-import Simple from "@dikac/t-validator/validatable/simple";
+import MessageDynamic from "@alirya/validator/message/function/validatable-parameter";
+import Simple from "@alirya/validator/validatable/simple";
 import Type from "../type";
 import TypeContainer from "../type/type";
-import ValidatableType from "@dikac/t-validator/validatable/validatable";
-import StrictOmit from "@dikac/t-object/strict-omit";
+import ValidatableType from "@alirya/validator/validatable/validatable";
+import StrictOmit from "@alirya/object/strict-omit";
 import TypeParameters from "./type-parameters";
 
 export type TypeType<

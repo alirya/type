@@ -1,11 +1,11 @@
-import Validator from "@dikac/t-validator/simple";
+import Validator from "@alirya/validator/simple";
 import TypeofValidatable, {TypeType as TypeofValidatableType} from "../validatable/type-parameters";
 import StringNative from "../string";
 import Type from "../type";
 import TypeContainer from "../type/type";
-import Simple from "@dikac/t-validator/message/function/simple-parameters";
+import Simple from "@alirya/validator/message/function/simple-parameters";
 import TypeofString from "../assert/string/type-parameters";
-import Message from "@dikac/t-message/message";
+import Message from "@alirya/message/message";
 import {TypeType} from "./type-parameters";
 
 export type TypeArgument<
