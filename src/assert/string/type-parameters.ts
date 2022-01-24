@@ -1,5 +1,13 @@
+import TemplateParameter from '@alirya/string/dist/function/template-parameter';
 import String from '../../string';
 
+const templateValid = TemplateParameter({
+    string: '{subject} is type of {type}.'
+});
+
+const templateInvalid = TemplateParameter({
+    string: '{subject} must type of {type}, actual {actual}.'
+});
 
 export default function TypeParameters<T extends String>(
     value : unknown,
@@ -9,24 +17,37 @@ export default function TypeParameters<T extends String>(
     conversion : (value:unknown)=>string = value=>typeof value
 ) : string {
 
-    const strings : string[] = [];
-    strings.push(subject);
+    const argument : Partial<Record<'subject'|'type'|'actual', string>> = {subject, type};
 
     if(valid) {
 
-        strings.push('is');
+        return templateValid(argument);
 
     } else {
 
-        strings.push('must');
+        argument.actual = conversion(value);
+
+        return templateInvalid(argument);
     }
 
-
-    if(!valid && conversion) {
-
-        strings[2] = strings[2] + ',';
-        strings.push('actual', conversion(value));
-    }
-
-    return strings.join(' ') + '.';
+    // const strings : string[] = [];
+    // strings.push(subject);
+    //
+    // if(valid) {
+    //
+    //     strings.push('is');
+    //
+    // } else {
+    //
+    //     strings.push('must');
+    // }
+    //
+    //
+    // if(!valid && conversion) {
+    //
+    //     strings[2] = strings[2] + ',';
+    //     strings.push('actual', conversion(value));
+    // }
+    //
+    // return strings.join(' ') + '.';
 }
