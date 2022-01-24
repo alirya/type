@@ -14,7 +14,7 @@ describe('compiler compatible', function() {
 
         } else {
 
-            // @ts-expecerror
+            // @ts-expect-error
             let result : boolean = value;
         }
     });
@@ -29,7 +29,7 @@ describe('compiler compatible', function() {
 
         } else {
 
-            // @ts-expecerror
+            // @ts-expect-error
             let result : object = value;
         }
     });
@@ -44,7 +44,7 @@ describe('compiler compatible', function() {
 
         } else {
 
-            // @ts-expecerror
+            // @ts-expect-error
             let result : string = value;
         }
     });
@@ -60,7 +60,7 @@ describe('compiler compatible', function() {
 
         } else {
 
-            // @ts-expecerror
+            // @ts-expect-error
             let result : number = value;
         }
     });
@@ -75,7 +75,7 @@ describe('compiler compatible', function() {
 
         } else {
 
-            // @ts-expecerror
+            // @ts-expect-error
             let result : ()=>any = value;
         }
     });
