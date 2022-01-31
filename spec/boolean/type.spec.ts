@@ -4,7 +4,7 @@ it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('compiler compatible', function() {
 
-    describe('boolean', function() {
+    it('boolean', function() {
 
         let value : unknown = true;
 
@@ -19,7 +19,7 @@ describe('compiler compatible', function() {
         }
     });
 
-    describe('object', function() {
+    it('object', function() {
 
         let value : unknown = {};
 
@@ -34,7 +34,7 @@ describe('compiler compatible', function() {
         }
     });
 
-    describe('string', function() {
+    it('string', function() {
 
         let value : unknown = 'str';
 
@@ -50,7 +50,7 @@ describe('compiler compatible', function() {
     });
 
 
-    describe('number', function() {
+    it('number', function() {
 
         let value : unknown = 1;
 
@@ -65,7 +65,7 @@ describe('compiler compatible', function() {
         }
     });
 
-    describe('function', function() {
+    it('function', function() {
 
         let value : unknown = ()=>null;
 

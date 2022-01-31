@@ -5,7 +5,7 @@ it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe(`with message`,function() {
 
-    describe('explicit', ()=>{
+    it('explicit', ()=>{
 
         let validator = Typeof<'string'>( 'string', TypeofString);
         let validatable = validator(1);
@@ -25,7 +25,7 @@ describe(`with message`,function() {
 
     });
 
-    describe('implicit', ()=>{
+    it('implicit', ()=>{
 
         let validator = Typeof( 'string', TypeofString);
         let validatable = validator(1);
@@ -49,7 +49,7 @@ describe(`with message`,function() {
 
 describe(`without message`,function() {
 
-    describe('explicit', ()=>{
+    it('explicit', ()=>{
 
         let validator = Typeof<'string'>( 'string');
         let validatable = validator(1);
@@ -69,7 +69,7 @@ describe(`without message`,function() {
 
     });
 
-    describe('implicit', ()=>{
+    it('implicit', ()=>{
 
         let validator = Typeof( 'string');
         let validatable = validator(1);
