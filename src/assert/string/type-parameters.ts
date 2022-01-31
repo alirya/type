@@ -2,11 +2,13 @@ import TemplateParameter from '@alirya/string/dist/function/template-parameter';
 import String from '../../string';
 
 const templateValid = TemplateParameter({
-    string: '{subject} is type of {type}.'
+    string: '{subject} is type of {type}.',
+    callback:(string)=>string.trim()
 });
 
 const templateInvalid = TemplateParameter({
-    string: '{subject} must type of {type}, actual {actual}.'
+    string: '{subject} must type of {type}, actual {actual}.',
+    callback:(string)=>string.trim()
 });
 
 export default function TypeParameters<T extends String>(
