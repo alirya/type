@@ -1,4 +1,4 @@
-import TemplateParameter from '@alirya/string/dist/function/template-parameter';
+import TemplateParameter from '@alirya/string/function/template-parameter';
 import String from '../../string';
 
 const templateValid = TemplateParameter({
