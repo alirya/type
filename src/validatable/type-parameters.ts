@@ -8,7 +8,7 @@ import ValidatableType from '@alirya/validator/validatable/validatable';
 import TypeofString from '../assert/string/type-parameters';
 import StringNative from '../string';
 
-export type TypeType<
+export type TypeParametersReturn<
     ValueT = unknown,
     TypeT extends String = String,
     MessageT = unknown
@@ -18,22 +18,22 @@ export default function TypeParameters<ValueT = unknown, TypeT extends String = 
     value : ValueT,
     type : TypeT,
     message : MessageStatic<ValueT, Type<TypeT>, false, true, MessageT, [StringNative]>
-) : TypeType<ValueT, TypeT, MessageT>;
+) : TypeParametersReturn<ValueT, TypeT, MessageT>;
 
 export default function TypeParameters<ValueT = unknown, TypeT extends String = String>(
     value : ValueT,
     type : TypeT,
-) : TypeType<ValueT, TypeT, string>;
+) : TypeParametersReturn<ValueT, TypeT, string>;
 
 export default function TypeParameters<ValueT = unknown, TypeT extends String = String, MessageT = unknown>(
     value : ValueT,
     type : TypeT,
     message : MessageStatic<ValueT, Type<TypeT>, false, true, MessageT|string, [StringNative]> = TypeofString
-) : TypeType<ValueT, TypeT, MessageT> {
+) : TypeParametersReturn<ValueT, TypeT, MessageT> {
 
     return Object.assign(
         new Callback<unknown>(value, BooleanTypeParameters, message, [type]),
         {type}
-    ) as TypeType<ValueT, TypeT, MessageT>;
+    ) as TypeParametersReturn<ValueT, TypeT, MessageT>;
 
 }
