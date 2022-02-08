@@ -4,13 +4,13 @@
   "description": "Typescript type",
   "dependencies": {
     "tslib": "^2.3.1",
-    "@alirya/function": "0.15.0",
-    "@alirya/message": "0.12.0",
-    "@alirya/object": "0.37.1",
-    "@alirya/string": "0.16.1",
-    "@alirya/validatable": "0.20.0",
-    "@alirya/validator": "0.19.1",
-    "@alirya/value": "0.15.0",
+    "@alirya/function": "^0.15.0",
+    "@alirya/message": "^0.12.0",
+    "@alirya/object": "^0.37.1",
+    "@alirya/string": "^0.16.2",
+    "@alirya/validatable": "^0.20.0",
+    "@alirya/validator": "^0.19.1",
+    "@alirya/value": "^0.15.0",
     "ts-toolbelt": "^9.6.0"
   },
   "devDependencies": {
