@@ -1,16 +1,28 @@
 {
   "name": "@alirya/type",
-  "version": "0.7.2",
+  "version": "0.7.1",
   "description": "Typescript type",
+  "publishConfig": {
+    "directory": "dist"
+  },
+  "author": {
+    "name": "Andika Candra"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/alirya/type",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alirya/type"
+  },
   "dependencies": {
     "tslib": "^2.3.1",
-    "@alirya/function": "^0.16.0",
-    "@alirya/message": "^0.12.1",
-    "@alirya/object": "^0.37.3",
-    "@alirya/string": "^0.16.4",
-    "@alirya/validatable": "^0.20.1",
-    "@alirya/validator": "^0.19.3",
-    "@alirya/value": "^0.15.1",
+    "@alirya/function": "^0.16.2",
+    "@alirya/message": "^0.12.2",
+    "@alirya/object": "^0.37.8",
+    "@alirya/string": "^0.16.8",
+    "@alirya/validatable": "^0.20.2",
+    "@alirya/validator": "^0.19.4",
+    "@alirya/value": "^0.15.2",
     "ts-toolbelt": "^9.6.0"
   },
   "devDependencies": {
@@ -30,7 +42,8 @@
     "tsc-fancy": "^1.1.2",
     "ts-toolbelt": "^9.6.0",
     "utility-types": "^3.10.0",
-    "package-version-git-tag": "^3.0.0"
+    "package-version-git-tag": "^3.0.0",
+    "cpx2": "^4.2.0"
   },
   "scripts": {
     "spec-run-js": "node -r esm node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
@@ -39,16 +52,13 @@
     "spec": "npm-run-all spec-compile spec-run",
     "spec-compile": "npm-run-all _spec-compile-script spec-cleanup",
     "spec-compile-watch": "npm-run-all --sequential _spec-ensure-directory --parallel _spec-compile-watch-script spec-cleanup-watch",
-    "compile": "npm-run-all _compile-script cleanup",
+    "compile": "npm-run-all _compile-script cleanup _compile-asset",
     "cleanup": "ts-cleaner --verbose --dist=dist --src=src",
     "cleanup-watch": "ts-cleaner --verbose --dist=dist --src=src --watch",
     "spec-cleanup": "ts-cleaner --verbose --dist=dist-spec --src=spec",
     "spec-cleanup-watch": "ts-cleaner --verbose --dist=dist-spec --src=spec --watch",
-    "compile-watch": "npm-run-all --sequential _compile-ensure-directory --parallel _compile-script-watch cleanup-watch",
-    "release": "remove-json-properties ./dist/package.json private",
-    "postrelease": "npm publish --access=public ./dist",
-    "prerelease": "npm-run-all _release-remove-compile-cache compile _release_copy-meta-files",
-    "postpublish": "rimraf package.json package-lock.json LICENSE Readme.md .npmignore",
+    "compile-watch": "npm-run-all --sequential _compile-ensure-directory --parallel _compile-script-watch cleanup-watch _compile-asset-watch",
+    "release": "npm publish ./dist",
     "lint": "tslint --project ./tslint.json",
     "lint-fix": "tslint --project ./tslint.json --fix",
     "doc-generate": "npm-run-all _doc-clean _doc-generate",
@@ -63,19 +73,10 @@
     "_release_copy-meta-files": "cpy package.json package-lock.json LICENSE Readme.md .npmignore dist",
     "_release-remove-compile-cache": "rimraf ./dist/compiler-cache.json",
     "_doc-generate": "typedoc --entryPointStrategy expand ./src --out docs",
-    "_doc-clean": "rimraf docs"
-  },
-  "publishConfig": {
-    "directory": "dist"
-  },
-  "author": {
-    "name": "Andika Candra"
-  },
-  "private": true,
-  "license": "Apache-2.0",
-  "homepage": "https://github.com/alirya/type",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/alirya/type"
+    "_doc-clean": "rimraf docs",
+    "prepublishOnly": "cd ../dist",
+    "_compile-asset": "cpx \"./{package.json,package-lock.json,LICENSE,Readme.md,.npmignore}\" ./dist/ --verbose",
+    "_compile-asset-watch": "cpx \"./{package.json,package-lock.json,LICENSE,README.md,.npmignore}\" ./dist/ --verbose --watch",
+    "prerelease": "npm-run-all _release-remove-compile-cache compile"
   }
 }
