@@ -1,4 +1,4 @@
-import Type from '../../dist/boolean/type-parameters';
+import {TypeParameters} from '../../dist/boolean/type';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -8,7 +8,7 @@ describe('compiler compatible', function() {
 
         let value : unknown = true;
 
-        if(Type(value, 'boolean')) {
+        if(TypeParameters(value, 'boolean')) {
 
             let result : boolean = value;
 
@@ -23,7 +23,7 @@ describe('compiler compatible', function() {
 
         let value : unknown = {};
 
-        if(Type(value, 'object')) {
+        if(TypeParameters(value, 'object')) {
 
             let result : object = value;
 
@@ -38,7 +38,7 @@ describe('compiler compatible', function() {
 
         let value : unknown = 'str';
 
-        if(Type(value, 'string')) {
+        if(TypeParameters(value, 'string')) {
 
             let result : string = value;
 
@@ -54,7 +54,7 @@ describe('compiler compatible', function() {
 
         let value : unknown = 1;
 
-        if(Type(value, 'number')) {
+        if(TypeParameters(value, 'number')) {
 
             let result : number = value;
 
@@ -69,7 +69,7 @@ describe('compiler compatible', function() {
 
         let value : unknown = ()=>null;
 
-        if(Type(value, 'function')) {
+        if(TypeParameters(value, 'function')) {
 
             let result : ()=>any = value;
 
@@ -85,11 +85,11 @@ describe('compiler compatible', function() {
 describe('boolean', function() {
 
     it(`true`, () => {
-        expect(Type(true, 'boolean')).toBeTrue();
+        expect(TypeParameters(true, 'boolean')).toBeTrue();
     });
 
     it(`false`, () => {
-        expect(Type(false, 'boolean')).toBeTrue();
+        expect(TypeParameters(false, 'boolean')).toBeTrue();
     });
 
 });
@@ -97,11 +97,11 @@ describe('boolean', function() {
 describe('string', function() {
 
     it(`primitive`, () => {
-        expect(Type('str', 'string')).toBeTrue();
+        expect(TypeParameters('str', 'string')).toBeTrue();
     });
 
     it(`object`, () => {
-        expect(Type(new String('str'), 'string')).toBeFalse();
+        expect(TypeParameters(new String('str'), 'string')).toBeFalse();
     });
 
 });
@@ -110,11 +110,11 @@ describe('string', function() {
 describe('number', function() {
 
     it(`primitive`, () => {
-        expect(Type(1, 'number')).toBeTrue();
+        expect(TypeParameters(1, 'number')).toBeTrue();
     });
 
     it(`nan`, () => {
-        expect(Type(NaN, 'number')).toBeTrue();
+        expect(TypeParameters(NaN, 'number')).toBeTrue();
     });
 
 });
@@ -122,11 +122,11 @@ describe('number', function() {
 describe('object', function() {
 
     it(`plain`, () => {
-        expect(Type({}, 'object')).toBeTrue();
+        expect(TypeParameters({}, 'object')).toBeTrue();
     });
 
     it(`instance`, () => {
-        expect(Type(new Map(), 'object')).toBeTrue();
+        expect(TypeParameters(new Map(), 'object')).toBeTrue();
     });
 
 });
@@ -134,15 +134,15 @@ describe('object', function() {
 describe('function', function() {
 
     it(`anonymous `, () => {
-        expect(Type(function () {}, 'function')).toBeTrue();
+        expect(TypeParameters(function () {}, 'function')).toBeTrue();
     });
 
     it(`anonymous arrow`, () => {
-        expect(Type(()=>{}, 'function')).toBeTrue();
+        expect(TypeParameters(()=>{}, 'function')).toBeTrue();
     });
 
     it(`named`, () => {
-        expect(Type(isNaN, 'function')).toBeTrue();
+        expect(TypeParameters(isNaN, 'function')).toBeTrue();
     });
 
 });
@@ -150,11 +150,11 @@ describe('function', function() {
 describe('empty', function() {
 
     it(`null `, () => {
-        expect(Type(null, 'object')).toBeTrue();
+        expect(TypeParameters(null, 'object')).toBeTrue();
     });
 
     it(`undefined`, () => {
-        expect(Type(undefined, 'undefined')).toBeTrue();
+        expect(TypeParameters(undefined, 'undefined')).toBeTrue();
     });
 
 });

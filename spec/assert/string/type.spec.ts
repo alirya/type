@@ -1,10 +1,10 @@
-import Type from '../../../dist/assert/string/type-parameters';
+import {TypeParameters} from '../../../dist/assert/string/type';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 it('true', ()=>{
 
-    expect(Type( {}, true, 'number','value')).toBe(
+    expect(TypeParameters( {}, true, 'number','value')).toBe(
         'value is type of number.'
     );
 
@@ -12,7 +12,7 @@ it('true', ()=>{
 
 it('false', ()=>{
 
-    expect(Type( {}, false, 'number','value')).toBe(
+    expect(TypeParameters( {}, false, 'number','value')).toBe(
         'value must type of number, actual object.'
     );
 
