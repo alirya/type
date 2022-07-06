@@ -1,4 +1,4 @@
-import TypeString from './string';
+import TypeString from './string.js';
 
 
 type Type<Type extends TypeString> =

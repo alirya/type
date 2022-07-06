@@ -1,17 +1,17 @@
-import {CallbackClassParameters} from '@alirya/validator/validatable/callback';
-import String from '../string';
-import BooleanTypeParameters from '../boolean/type';
-import {StaticParameters} from '@alirya/validator/message/function/static';
-import Simple from '@alirya/validator/validatable/simple';
-import Type from '../type';
-import ValidatableType from '@alirya/validator/validatable/validatable';
-import TypeofString from '../assert/string/type';
-import StringNative from '../string';
-import Value from '@alirya/value/value';
-import Message from '@alirya/message/message';
-import {ValidatableParameter} from '@alirya/validator/message/function/validatable';
-import TypeContainer from '../type/type';
-import StrictOmit from '@alirya/object/strict-omit';
+import {CallbackClassParameters} from '@alirya/validator/validatable/callback.js';
+import String from '../string.js';
+import BooleanTypeParameters from '../boolean/type.js';
+import {StaticParameters} from '@alirya/validator/message/function/static.js';
+import Simple from '@alirya/validator/validatable/simple.js';
+import Type from '../type.js';
+import ValidatableType from '@alirya/validator/validatable/validatable.js';
+import TypeofString from '../assert/string/type.js';
+import StringNative from '../string.js';
+import Value from '@alirya/value/value.js';
+import Message from '@alirya/message/message.js';
+import {ValidatableParameter} from '@alirya/validator/message/function/validatable.js';
+import TypeContainer from '../type/type.js';
+import StrictOmit from '@alirya/object/strict-omit.js';
 
 
 export type TypeReturn<

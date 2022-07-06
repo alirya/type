@@ -1,7 +1,7 @@
-import {TemplateParameter} from '@alirya/string/function/template';
-import String from '../../string';
-import Type from '../../type/type';
-import DynamicValue from '@alirya/validator/value/validatable';
+import {TemplateParameter} from '@alirya/string/function/template.js';
+import String from '../../string.js';
+import Type from '../../type/type.js';
+import DynamicValue from '@alirya/validator/value/validatable.js';
 
 const templateValid = TemplateParameter({
     string: '{subject} is type of {type}.',

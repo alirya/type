@@ -1,4 +1,4 @@
-import {TypeParameters} from '../../dist/boolean/type';
+import {TypeParameters} from '../../dist/boolean/type.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 

@@ -1,10 +1,10 @@
-import String from '../../string';
-import TypeString from '../string/type';
-import Value from '@alirya/value/value';
-import Type from '../../type/type';
-import {ValidatableParameter, ValidatableParameters} from '@alirya/validator/message/function/validatable';
-import DynamicValue from '@alirya/validator/value/validatable';
-import Message from '@alirya/message/message';
+import String from '../../string.js';
+import TypeString from '../string/type.js';
+import Value from '@alirya/value/value.js';
+import Type from '../../type/type.js';
+import {ValidatableParameter, ValidatableParameters} from '@alirya/validator/message/function/validatable.js';
+import DynamicValue from '@alirya/validator/value/validatable.js';
+import Message from '@alirya/message/message.js';
 
 export function TypeParameters(
     value : unknown,

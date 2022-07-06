@@ -1,5 +1,5 @@
-import {TypeParameters} from '../../../dist/validator/type';
-import TypeofString from '../../../dist/assert/string/type';
+import {TypeParameters} from '../../../dist/validator/type.js';
+import TypeofString from '../../../dist/assert/string/type.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
