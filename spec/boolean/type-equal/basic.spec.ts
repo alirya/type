@@ -1,4 +1,4 @@
-import TypeEqual from "../../../dist/boolean/type-equal-parameters";
+import TypeEqual from "../../../dist/boolean/type-equal";
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -6,7 +6,7 @@ describe('compiler compatible', function() {
 
     it('boolean', function() {
 
-        expect(TypeEqual(true, false)).toBeTrue()
+        expect(TypeEqual.Parameters(true, false)).toBeTrue();
 
     });
 });

@@ -18,7 +18,7 @@ export type TypeReturn<
     ValueT = unknown,
     TypeT extends String = String,
     MessageT = unknown
-> = Simple<ValueT, Type<TypeT>, ValidatableType<unknown, MessageT>> & {type : TypeT};
+> = Simple<ValueT, Type<TypeT>, MessageT, {type : TypeT}>;
 
 export function TypeParameters<ValueT = unknown, TypeT extends String = String, MessageT = unknown>(
     value : ValueT,

@@ -12,7 +12,7 @@ import Dynamic from '@alirya/validator/value/validatable';
 export type TypeParametersReturn<
     TypeName extends StringNative,
     MessageType = unknown
-    > = Validator<unknown, Type<TypeName>, TypeofValidatable.Return<unknown, TypeName, MessageType>>;
+    > = Validator<unknown, Type<TypeName>, MessageType, {type : TypeName}>;
 
 export function TypeParameters<
     TypeName extends StringNative,
@@ -39,14 +39,16 @@ export function TypeParameters<
 
         return  TypeofValidatable.Parameters(value, type, message);
 
-    } as Validator<unknown, Type<TypeName>, TypeofValidatable.Return<unknown, TypeName, MessageType>>;
+    } as Validator<unknown, Type<TypeName>, MessageType, { type: TypeName }>;
 }
 
 
 export type TypeArgument<
     TypeName extends StringNative,
     MessageType = unknown
-    > = TypeContainer<TypeName> & Message<SimpleParameter<unknown, TypeName, MessageType, TypeContainer<StringNative> & SimpleReturn<unknown, TypeName, Readonly<Dynamic<unknown>>>>>;
+> = TypeContainer<TypeName> &
+    Message<SimpleParameter<unknown, TypeName, MessageType, TypeContainer<StringNative> &
+    SimpleReturn<unknown, TypeName, Readonly<Dynamic<unknown>>>>>;
 
 export function TypeParameter<
     TypeName extends StringNative,
@@ -79,7 +81,7 @@ export function TypeParameter<
 
         return  TypeofValidatable.Parameters(value, type, (a)=>message(a));
 
-    } as Validator<unknown, Type<TypeName>, TypeofValidatable.Return<unknown, TypeName, MessageType>>;
+    } as Validator<unknown, Type<TypeName>, MessageType, {type:TypeName}>;
 }
 
 namespace Type {
