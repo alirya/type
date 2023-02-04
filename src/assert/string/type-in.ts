@@ -21,16 +21,16 @@ export function TypeInParameters(
     conversion : (value:unknown)=>string = value=>typeof value
 ) : string {
 
-    const typeNames : string = types.map(conversion).join(', ');
+    const typeNames : string = types.join(', ');
 
     if(valid) {
 
-        return `${subject} is in type of ${typeNames}.`;
+        return `${subject} is in type of ${typeNames}.`.trim();
 
     } else {
 
         const actual = conversion(value);
-        return `${subject} must type of ${typeNames}, actual type ${actual}.`;
+        return `${subject} must in type of ${typeNames}, actual type ${actual}.`.trim();
     }
 
     // const argument : Partial<Record<'subject'|'type'|'actual', string>> = {subject, type};

@@ -16,13 +16,13 @@ export function TypeInParameters<TypeName extends TypeString[]>(
 
     for(const type of types) {
 
-        if(typeof value !== type) {
+        if(typeof value === type) {
 
-            return false;
+            return true;
         }
     }
 
-    return !!types.length;
+    return false;
 }
 
 export function TypeInParameter<Type extends TypeString[]>({
