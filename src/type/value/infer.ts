@@ -1,4 +1,4 @@
-import TypeInterface from '../type';
+import TypeInterface from '../type.js';
 
 type Infer<Type> = Type extends TypeInterface<infer As> ? As : never;
 

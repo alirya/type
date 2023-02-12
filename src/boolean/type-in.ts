@@ -1,8 +1,8 @@
-import Type from '../type';
-import TypeString from '../string';
-import String from '../string';
-import Value from '@alirya/value/value';
-import TypeInterface from '../type/type';
+import Type from '../type.js';
+import TypeString from '../string.js';
+import String from '../string.js';
+import Value from '@alirya/value/value.js';
+import TypeInterface from '../type/type.js';
 import {List} from 'ts-toolbelt';
 
 export type TypeInUnion<TypeName extends TypeString[]> = List.UnionOf<{

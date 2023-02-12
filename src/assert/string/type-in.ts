@@ -1,7 +1,7 @@
-import {TemplateParameter} from '@alirya/string/function/template';
-import String from '../../string';
-import Type from '../../type/type';
-import DynamicValue from '@alirya/validator/value/validatable';
+import {TemplateParameter} from '@alirya/string/function/template.js';
+import String from '../../string.js';
+import Type from '../../type/type.js';
+import DynamicValue from '@alirya/validator/value/validatable.js';
 
 // const templateValid = TemplateParameter({
 //     string: '{subject} is type of {type}.',
@@ -16,8 +16,8 @@ import DynamicValue from '@alirya/validator/value/validatable';
 export function TypeInParameters(
     value : unknown,
     valid : boolean,
-    types : String[],
-    subject : string = '',
+    types : string[],
+    subject  = '',
     conversion : (value:unknown)=>string = value=>typeof value
 ) : string {
 
@@ -52,7 +52,7 @@ export type TypeInArgument =
     DynamicValue<unknown> &
     // Type<String> &
     {
-        types: String[],
+        types: string[],
         error ?: (message:string)=>Error
         conversion ?: (value:unknown)=>string,
         subject ?: string

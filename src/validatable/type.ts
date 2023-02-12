@@ -1,37 +1,38 @@
-import {CallbackClassParameters} from '@alirya/validator/validatable/callback';
-import String from '../string';
-import BooleanTypeParameters from '../boolean/type';
-import {StaticParameters} from '@alirya/validator/message/function/static';
-import Simple from '@alirya/validator/validatable/simple';
-import Type from '../type';
-import ValidatableType from '@alirya/validator/validatable/validatable';
-import TypeofString from '../assert/string/type';
-import StringNative from '../string';
-import Value from '@alirya/value/value';
-import Message from '@alirya/message/message';
-import {ValidatableParameter} from '@alirya/validator/message/function/validatable';
-import TypeContainer from '../type/type';
-import StrictOmit from '@alirya/object/strict-omit';
+import {CallbackClassParameters} from '@alirya/validator/validatable/callback.js';
+import String from '../string.js';
+import BooleanTypeParameters from '../boolean/type.js';
+import {StaticParameters} from '@alirya/validator/message/function/static.js';
+import Simple from '@alirya/validator/validatable/simple.js';
+import Type from '../type.js';
+import ValidatableType from '@alirya/validator/validatable/validatable.js';
+import TypeofString from '../assert/string/type.js';
+import StringNative from '../string.js';
+import Value from '@alirya/value/value.js';
+import Message from '@alirya/message/message.js';
+import {ValidatableParameter} from '@alirya/validator/message/function/validatable.js';
+import TypeContainer from '../type/type.js';
+import StrictOmit from '@alirya/object/strict-omit.js';
+import TypeString from '../string';
 
 
 export type TypeReturn<
     ValueT = unknown,
-    TypeT extends String = String,
+    TypeT extends TypeString = TypeString,
     MessageT = unknown
 > = Simple<ValueT, Type<TypeT>, MessageT, {type : TypeT}>;
 
-export function TypeParameters<ValueT = unknown, TypeT extends String = String, MessageT = unknown>(
+export function TypeParameters<ValueT = unknown, TypeT extends TypeString = TypeString, MessageT = unknown>(
     value : ValueT,
     type : TypeT,
     message : StaticParameters<ValueT, Type<TypeT>, false, true, MessageT, [StringNative]>
 ) : TypeReturn<ValueT, TypeT, MessageT>;
 
-export function TypeParameters<ValueT = unknown, TypeT extends String = String>(
+export function TypeParameters<ValueT = unknown, TypeT extends TypeString = TypeString>(
     value : ValueT,
     type : TypeT,
 ) : TypeReturn<ValueT, TypeT, string>;
 
-export function TypeParameters<ValueT = unknown, TypeT extends String = String, MessageT = unknown>(
+export function TypeParameters<ValueT = unknown, TypeT extends TypeString = TypeString, MessageT = unknown>(
     value : ValueT,
     type : TypeT,
     message : StaticParameters<ValueT, Type<TypeT>, false, true, MessageT|string, [StringNative]> = TypeofString.Parameters
@@ -47,13 +48,13 @@ export function TypeParameters<ValueT = unknown, TypeT extends String = String, 
 
 export type TypeArgument<
     ValueT = unknown,
-    TypeT extends String = String,
+    TypeT extends string = string,
     MessageT = unknown
 > =
     Value<ValueT> & TypeContainer<TypeT> &
     Partial<Message<ValidatableParameter<ValueT, MessageT>>>;
 
-export function TypeParameter<ValueT = unknown, TypeT extends String = String, MessageT = unknown>(
+export function TypeParameter<ValueT = unknown, TypeT extends TypeString = TypeString, MessageT = unknown>(
     {
         value,
         type,
@@ -61,14 +62,14 @@ export function TypeParameter<ValueT = unknown, TypeT extends String = String, M
     } : Required<TypeArgument<ValueT, TypeT, MessageT>>
 ) : TypeReturn<ValueT, TypeT, MessageT>;
 
-export function TypeParameter<ValueT = unknown, TypeT extends String = String>(
+export function TypeParameter<ValueT = unknown, TypeT extends TypeString = TypeString>(
     {
         value,
         type,
     } : StrictOmit<TypeArgument<ValueT, TypeT>, 'message'>
 ) : TypeReturn<ValueT, TypeT, string>;
 
-export function TypeParameter<ValueT = unknown, TypeT extends String = String, MessageT = unknown>(
+export function TypeParameter<ValueT = unknown, TypeT extends TypeString = TypeString, MessageT = unknown>(
     {
         value,
         type,
@@ -94,9 +95,9 @@ export function TypeParameter<ValueT = unknown, TypeT extends String = String, M
 namespace Type {
     export const Parameters = TypeParameters;
     export const Parameter = TypeParameter;
-    export type Return<ValueT = unknown, TypeT extends String = String, MessageT = unknown>
+    export type Return<ValueT = unknown, TypeT extends TypeString = TypeString, MessageT = unknown>
         = TypeReturn<ValueT, TypeT, MessageT>;
-    export type Argument<ValueT = unknown, TypeT extends String = String, MessageT = unknown>
+    export type Argument<ValueT = unknown, TypeT extends TypeString = TypeString, MessageT = unknown>
         = TypeArgument<ValueT, TypeT, MessageT>;
 }
 export default Type;

@@ -1,4 +1,4 @@
-import TypeEqual from "../../../dist/boolean/type-equal";
+import TypeEqual from '../../../dist/boolean/type-equal.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 

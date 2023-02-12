@@ -1,4 +1,4 @@
-import {TypeParameters} from '../../dist/boolean/type';
+import {TypeParameters} from '../../dist/boolean/type.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -6,77 +6,77 @@ describe('compiler compatible', function() {
 
     it('boolean', function() {
 
-        let value : unknown = true;
+        const value : unknown = true;
 
         if(TypeParameters(value, 'boolean')) {
 
-            let result : boolean = value;
+            const result : boolean = value;
 
         } else {
 
             // @ts-expect-error
-            let result : boolean = value;
+            const result : boolean = value;
         }
     });
 
     it('object', function() {
 
-        let value : unknown = {};
+        const value : unknown = {};
 
         if(TypeParameters(value, 'object')) {
 
-            let result : object = value;
+            const result : object = value;
 
         } else {
 
             // @ts-expect-error
-            let result : object = value;
+            const result : object = value;
         }
     });
 
     it('string', function() {
 
-        let value : unknown = 'str';
+        const value : unknown = 'str';
 
         if(TypeParameters(value, 'string')) {
 
-            let result : string = value;
+            const result : string = value;
 
         } else {
 
             // @ts-expect-error
-            let result : string = value;
+            const result : string = value;
         }
     });
 
 
     it('number', function() {
 
-        let value : unknown = 1;
+        const value : unknown = 1;
 
         if(TypeParameters(value, 'number')) {
 
-            let result : number = value;
+            const result : number = value;
 
         } else {
 
             // @ts-expect-error
-            let result : number = value;
+            const result : number = value;
         }
     });
 
     it('function', function() {
 
-        let value : unknown = ()=>null;
+        const value : unknown = ()=>null;
 
         if(TypeParameters(value, 'function')) {
 
-            let result : ()=>any = value;
+            const result : ()=>any = value;
 
         } else {
 
             // @ts-expect-error
-            let result : ()=>any = value;
+            const result : ()=>any = value;
         }
     });
 

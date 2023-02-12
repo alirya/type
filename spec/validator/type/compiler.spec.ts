@@ -1,5 +1,5 @@
-import {TypeParameters} from '../../../dist/validator/type';
-import TypeofString from '../../../dist/assert/string/type';
+import {TypeParameters} from '../../../dist/validator/type.js';
+import TypeofString from '../../../dist/assert/string/type.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -7,18 +7,18 @@ describe(`with message`,function() {
 
     it('explicit', ()=>{
 
-        let validator = TypeParameters<'string'>( 'string', TypeofString.Parameters);
-        let validatable = validator(1);
+        const validator = TypeParameters<'string'>( 'string', TypeofString.Parameters);
+        const validatable = validator(1);
 
         if(validatable.valid) {
 
             // let type : "string" = validator.type;
-            let string : string = validatable.value;
+            const string : string = validatable.value;
 
         } else {
 
             // @ts-expect-error
-            let string : string = validatable.value;
+            const string : string = validatable.value;
             // let type : "string" = validator.type;
         }
 
@@ -27,21 +27,21 @@ describe(`with message`,function() {
 
     it('implicit', ()=>{
 
-        let validator = TypeParameters( 'string', TypeofString.Parameters);
-        let validatable = validator(1);
+        const validator = TypeParameters( 'string', TypeofString.Parameters);
+        const validatable = validator(1);
 
         if(validatable.valid) {
 
             // let type : "string" = validator.type;
-            let string : string = validatable.value;
+            const string : string = validatable.value;
             // @ts-expect-error
-            let number : number = validatable.value;
+            const number : number = validatable.value;
 
         } else {
 
             // @ts-expect-error
-            let string : string = validatable.value;
-            let number : number = validatable.value;
+            const string : string = validatable.value;
+            const number : number = validatable.value;
             // let type : "string" = validator.type;
         }
     });
@@ -51,18 +51,18 @@ describe(`without message`,function() {
 
     it('explicit', ()=>{
 
-        let validator = TypeParameters<'string'>( 'string');
-        let validatable = validator(1);
+        const validator = TypeParameters<'string'>( 'string');
+        const validatable = validator(1);
 
         if(validatable.valid) {
 
             // let type : "string" = validator.type;
-            let string : string = validatable.value;
+            const string : string = validatable.value;
 
         } else {
 
             // @ts-expect-error
-            let string : string = validatable.value;
+            const string : string = validatable.value;
             // let type : "string" = validator.type;
         }
 
@@ -71,18 +71,18 @@ describe(`without message`,function() {
 
     it('implicit', ()=>{
 
-        let validator = TypeParameters( 'string');
-        let validatable = validator(1);
+        const validator = TypeParameters( 'string');
+        const validatable = validator(1);
 
         if(validatable.valid) {
 
             // let type : "string" = validator.type;
-            let string : string = validatable.value;
+            const string : string = validatable.value;
 
         } else {
 
             // @ts-expect-error
-            let string : string = validatable.value;
+            const string : string = validatable.value;
             // let type : "string" = validator.type;
         }
     });

@@ -1,9 +1,9 @@
-import Guard from '../boolean/type';
-import {CallbackParameters} from '@alirya/function/assert/callback';
-import TypeError from './throwable/type';
-import TypeString from '../string';
-import Value from '@alirya/value/value';
-import Type from '../type/type';
+import Guard from '../boolean/type.js';
+import {CallbackParameters} from '@alirya/function/assert/callback.js';
+import TypeError from './throwable/type.js';
+import TypeString from '../string.js';
+import Value from '@alirya/value/value.js';
+import Type from '../type/type.js';
 
 export function TypeParameters<TypeName extends TypeString = TypeString>(
     value : unknown,

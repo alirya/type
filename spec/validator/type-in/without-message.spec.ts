@@ -1,14 +1,14 @@
-import {TypeInParameters} from '../../../dist/validator/type-in';
+import {TypeInParameters} from '../../../dist/validator/type-in.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('string', ()=>{
 
-    let validator = TypeInParameters<['string', 'number']>( ['string', 'number']);
+    const validator = TypeInParameters<['string', 'number']>( ['string', 'number']);
 
     it('valid', ()=>{
 
-        let validatable = validator('ab');
+        const validatable = validator('ab');
 
         expect(validatable.valid).toBe(true);
         expect(validatable.types).toEqual(['string', 'number']);
@@ -18,7 +18,7 @@ describe('string', ()=>{
 
     it('invalid', ()=>{
 
-        let validatable = validator({});
+        const validatable = validator({});
 
         expect(validatable.message).toBe('must in type of string, number, actual type object.');
         expect(validatable.valid).toBe(false);
@@ -29,11 +29,11 @@ describe('string', ()=>{
 
 describe('object', ()=>{
 
-    let validator = TypeInParameters<['string', 'number']>( ['string', 'number']);
+    const validator = TypeInParameters<['string', 'number']>( ['string', 'number']);
 
     it('invalid', ()=>{
 
-        let validatable = validator({});
+        const validatable = validator({});
 
         expect(validatable.message).toBe('must in type of string, number, actual type object.');
         expect(validatable.valid).toBe(false);
@@ -43,7 +43,7 @@ describe('object', ()=>{
 
     it('valid', ()=>{
 
-        let validatable = validator(1);
+        const validatable = validator(1);
 
         expect(validatable.message).toBe('is in type of string, number.');
         expect(validatable.valid).toBe(true);

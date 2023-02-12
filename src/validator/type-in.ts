@@ -1,15 +1,15 @@
-import Validator from '@alirya/validator/simple';
-import TypeofValidatable from '../validatable/type-in';
-import StringNative from '../string';
-import Type from '../type';
-import {SimpleParameters, SimpleParameter} from '@alirya/validator/message/function/simple';
-import TypeofString from '../assert/string/type-in';
-import TypeContainer from '../type/type';
-import Message from '@alirya/message/message';
-import SimpleReturn from '@alirya/validator/value/simple';
-import Dynamic from '@alirya/validator/value/validatable';
-import TypeString from '../string';
-import {TypeInUnion} from '../boolean/type-in';
+import Validator from '@alirya/validator/simple.js';
+import TypeofValidatable from '../validatable/type-in.js';
+import StringNative from '../string.js';
+import Type from '../type.js';
+import {SimpleParameters, SimpleParameter} from '@alirya/validator/message/function/simple.js';
+import TypeofString from '../assert/string/type-in.js';
+import TypeContainer from '../type/type.js';
+import Message from '@alirya/message/message.js';
+import SimpleReturn from '@alirya/validator/value/simple.js';
+import Dynamic from '@alirya/validator/value/validatable.js';
+import TypeString from '../string.js';
+import {TypeInUnion} from '../boolean/type-in.js';
 
 export type TypeInParametersReturn<
     TypeName extends TypeString[],
