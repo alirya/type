@@ -1,7 +1,7 @@
 import Type from '../type.js';
 import TypeString from '../string.js';
 import String from '../string.js';
-import Value from '@alirya/value/value.js';
+import Value from '@axiona/value/value.js';
 import TypeInterface from '../type/type.js';
 import {List} from 'ts-toolbelt';
 

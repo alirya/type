@@ -1,8 +1,8 @@
 import Guard from '../boolean/type-in.js';
-import {CallbackParameters} from '@alirya/function/assert/callback.js';
+import {CallbackParameters} from '@axiona/function/assert/callback.js';
 import TypeError from './throwable/type-in.js';
 import TypeString from '../string.js';
-import Value from '@alirya/value/value.js';
+import Value from '@axiona/value/value.js';
 import Type from '../type/type.js';
 
 export function TypeInParameters<TypeName extends TypeString[] = TypeString[]>(

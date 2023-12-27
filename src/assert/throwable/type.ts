@@ -1,10 +1,10 @@
 import String from '../../string.js';
 import TypeString from '../string/type.js';
-import Value from '@alirya/value/value.js';
+import Value from '@axiona/value/value.js';
 import Type from '../../type/type.js';
-import {ValidatableParameter, ValidatableParameters} from '@alirya/validator/message/function/validatable.js';
-import DynamicValue from '@alirya/validator/value/validatable.js';
-import Message from '@alirya/message/message.js';
+import {ValidatableParameter, ValidatableParameters} from '@axiona/validator/message/function/validatable.js';
+import DynamicValue from '@axiona/validator/value/validatable.js';
+import Message from '@axiona/message/message.js';
 
 export function TypeParameters(
     value : unknown,

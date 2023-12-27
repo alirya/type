@@ -1,5 +1,5 @@
 {
-  "name": "@alirya/type",
+  "name": "@axiona/type",
   "version": "0.8.1",
   "description": "Typescript type",
   "publishConfig": {
@@ -12,20 +12,20 @@
     "cache": false
   },
   "license": "Apache-2.0",
-  "homepage": "https://github.com/alirya/type",
+  "homepage": "https://github.com/axiona/type",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alirya/type"
+    "url": "https://github.com/axiona/type"
   },
   "dependencies": {
     "tslib": "^2.5.0",
-    "@alirya/function": "^0.17.1",
-    "@alirya/message": "^0.13.1",
-    "@alirya/object": "^0.38.1",
-    "@alirya/string": "^0.17.1",
-    "@alirya/validatable": "^0.21.1",
-    "@alirya/validator": "^0.20.1",
-    "@alirya/value": "^0.16.1",
+    "@axiona/function": "^0.17.1",
+    "@axiona/message": "^0.13.1",
+    "@axiona/object": "^0.38.1",
+    "@axiona/string": "^0.17.1",
+    "@axiona/validatable": "^0.21.1",
+    "@axiona/validator": "^0.20.1",
+    "@axiona/value": "^0.16.1",
     "ts-toolbelt": "^9.6.0"
   },
   "devDependencies": {
@@ -78,7 +78,7 @@
     "_spec-compile-watch-script": "tsc-fancy --preserveConsoleOutput -w -p tsconfig-spec.json",
     "_compile-ensure-directory": "mkdirp dist",
     "_release_copy-meta-files": "cpy package.json package-lock.json LICENSE Readme.md .npmignore dist",
-    "_release-remove-compile-cache": "rimraf ./dist/compiler-cache.json",
+    "_release-remove-compile-cache": "rimraf ./dist/.compiler-cache.json",
     "_doc-generate": "typedoc --entryPointStrategy expand ./src --out docs",
     "_doc-clean": "rimraf docs",
     "prepublishOnly": "cd ../dist",

@@ -1,17 +1,17 @@
-import {CallbackClassParameters} from '@alirya/validator/validatable/callback.js';
+import {CallbackClassParameters} from '@axiona/validator/validatable/callback.js';
 import String from '../string.js';
 import BooleanTypeInParameters, {TypeInUnion} from '../boolean/type-in.js';
-import {StaticParameters} from '@alirya/validator/message/function/static.js';
-import Simple from '@alirya/validator/validatable/simple.js';
+import {StaticParameters} from '@axiona/validator/message/function/static.js';
+import Simple from '@axiona/validator/validatable/simple.js';
 import Type from '../type.js';
-import ValidatableType from '@alirya/validator/validatable/validatable.js';
+import ValidatableType from '@axiona/validator/validatable/validatable.js';
 import TypeofString from '../assert/string/type-in.js';
 import StringNative from '../string.js';
-import Value from '@alirya/value/value.js';
-import Message from '@alirya/message/message.js';
-import {ValidatableParameter} from '@alirya/validator/message/function/validatable.js';
+import Value from '@axiona/value/value.js';
+import Message from '@axiona/message/message.js';
+import {ValidatableParameter} from '@axiona/validator/message/function/validatable.js';
 import TypeContainer from '../type/type.js';
-import StrictOmit from '@alirya/object/strict-omit.js';
+import StrictOmit from '@axiona/object/strict-omit.js';
 import TypeString from '../string.js';
 
 

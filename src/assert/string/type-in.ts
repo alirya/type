@@ -1,7 +1,7 @@
-import {TemplateParameter} from '@alirya/string/function/template.js';
+import {TemplateParameter} from '@axiona/string/function/template.js';
 import String from '../../string.js';
 import Type from '../../type/type.js';
-import DynamicValue from '@alirya/validator/value/validatable.js';
+import DynamicValue from '@axiona/validator/value/validatable.js';
 
 // const templateValid = TemplateParameter({
 //     string: '{subject} is type of {type}.',
